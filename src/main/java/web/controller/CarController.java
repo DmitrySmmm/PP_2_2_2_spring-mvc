@@ -12,7 +12,7 @@ import java.util.List;
 
 @Controller
 public class CarController {
-@Autowired
+
     private final CarService carService;
 
     @Autowired
@@ -22,7 +22,7 @@ public class CarController {
 
     @GetMapping("/cars")
     public String getCars(@RequestParam(value = "count", defaultValue = "5", required = false) Integer count, Model model) {
-        model.addAttribute("message", carService.showCar(count));
+        model.addAttribute("message", carService.getByCount(count));
         return "cars/model";
     }
 }
