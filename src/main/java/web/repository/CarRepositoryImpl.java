@@ -1,16 +1,14 @@
 package web.repository;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import web.model.Car;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class CarRepositoryImpl implements CarRepository {
 
-    private List<Car> cars = new ArrayList<>();
+    private final List<Car> cars = new ArrayList<>();
     {
         cars.add(new Car("Volkswagen", "Golf", 1.8));
         cars.add(new Car("Audi", "A6", 3.0));
